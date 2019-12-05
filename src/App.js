@@ -8,13 +8,18 @@ class App extends Component {
   }
 
   render () {
-    return <div>test</div>
+    const { xyz } = this.props
+
+    const vents = xyz && xyz
+      .map(vent => <p>{vent.name}</p>)
+
+    return <div>{vents}</div>
   }
 }
 
 function mapStateToProps (state) {
   return {
-    xyz: state.vents
+    xyz: state
   }
 }
 
